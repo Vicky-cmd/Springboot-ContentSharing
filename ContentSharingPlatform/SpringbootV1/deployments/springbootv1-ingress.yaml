@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: springbootv1-ingress
+    annotations:
+        nginx.ingress.kubernetes.io/use-regex: "true"
+        ingress.kubernetes.io/rewrite-target: /$1
+spec:
+    rules:
+    - http:
+        paths:
+            -   path: /path/(.*)
+                backend:
+                    serviceName: springbootv1
+                    servicePort: 8081
