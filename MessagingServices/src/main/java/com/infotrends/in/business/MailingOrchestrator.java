@@ -78,8 +78,8 @@ public class MailingOrchestrator {
 		System.out.println("Sending Email to " + toMail);
 		
 		String smtpHostServer = "smtp.example.com";
-	    final String fromEmail = "infotrends.india@gmail.com";
-	    final String password = "Open.123";
+	    final String fromEmail = "i*****@gmail.com";
+	    final String password = "****";
 	    Properties props = System.getProperties();
 	    props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.port", "587");
