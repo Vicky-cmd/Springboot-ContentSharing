@@ -8,7 +8,9 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -47,14 +49,22 @@ public class ConnectionInterface {
             int status = conn.getResponseCode();
             String respStatus = null;
             InputStream inputStream;
-            if (status != HttpURLConnection.HTTP_OK)  {
-            	respStatus = "Failure";
-                inputStream = conn.getErrorStream();
-            }
-            else  {
+//            if (status != HttpURLConnection.HTTP_OK)  {
+//            	respStatus = "Failure";
+//                inputStream = conn.getErrorStream();
+//            }
+//            else  {
+//            	respStatus = "Success";
+//                inputStream = conn.getInputStream();
+//            }
+            
+            try {
             	respStatus = "Success";
-                inputStream = conn.getInputStream();
-            }
+            	inputStream = conn.getInputStream();
+            } catch (Exception e) {
+            	respStatus = "Failure";
+            	inputStream = conn.getErrorStream();
+			}
 
             try(BufferedReader br = new BufferedReader(
                     new InputStreamReader(inputStream, "utf-8"))) {
@@ -145,9 +155,7 @@ public class ConnectionInterface {
         }
 
         return ResponseMap;
-    }
-
-    
+    }    
 
     public HashMap<String, Object> toHashMap(JSONObject json) throws JSONException {
         HashMap<String, Object> respObj = new HashMap<String, Object>();

@@ -35,6 +35,6 @@ public class DemoApplication extends SpringBootServletInitializer
     
     @Bean(initMethod = "start", destroyMethod = "stop")
     public Server h2Server() throws SQLException {
-        return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9092");
+        return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9050");
     }
 }

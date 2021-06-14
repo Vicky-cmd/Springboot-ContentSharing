@@ -13,6 +13,8 @@ public class AppConstants {
 	public static String send_mail_toNewRegisteredUsr_QName = "mailNewUser";
 	public static String token_deactivation_QName = "expireTokens";
 	public static String validateOtpUrl = "http://localhost:8085/api/v1/validateAuthToken";
+	public static String createOrderPaymentUrl = "http://localhost:8088/api/v1/payment/createOrder";
+	public static String confirmOrderPaymentUrl = "http://localhost:8088/api/v1/payment/confirmPayment";
 	
 	public static int articlesPerPage = 10;
 }

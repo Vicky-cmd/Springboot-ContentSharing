@@ -109,4 +109,31 @@ public class AppController {
 		
 		return mv;
 	}
+	
+	
+	
+	@GetMapping(value = {"/retailApp", "/retailApp/items", "/retailApp/cart", "/retailApp/viewCart"})  
+	public String retailApp()   
+	{
+		System.out.println("inside Controller => /retailApp**");
+		return "/retailApp/index.html";
+
+	}
+	
+
+	@GetMapping("/error")
+	public String errorMapping(HttpServletRequest request, 
+			HttpServletResponse response) {
+		
+		return "error.jsp";
+	}
+	
+	@GetMapping(value = {"/about-me", "/about-me/jokes", "/retailApp/musicMatch", "/about-me/reminderPro"})  
+	public String aboutMeMapper()   
+	{
+		System.out.println("inside Controller => /about-me**");
+		return "/about-me/index.html";
+
+	}
+	
 }

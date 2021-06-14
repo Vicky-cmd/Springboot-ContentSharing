@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.http.HttpStatus;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +25,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.infotrends.in.SpringbootV1.bussiness.Orchestrator;
+import com.infotrends.in.SpringbootV1.dao.RedisDataRepository;
 import com.infotrends.in.SpringbootV1.data.AppConfigs;
+import com.infotrends.in.SpringbootV1.data.RedisData;
 import com.infotrends.in.SpringbootV1.data.Users;
 import com.infotrends.in.SpringbootV1.service.AppConfigsService;
 import com.infotrends.in.SpringbootV1.service.CommentsServices;
@@ -40,6 +44,8 @@ public class AppRestController {
 	Orchestrator orchestrator;
 	@Autowired
 	AppConfigsService appConfigService;
+	@Autowired 
+	RedisDataRepository redisDataRepository;
 	
 	@GetMapping("/userInfo/{username}")  
 	public String displayUserInfo(@PathVariable String username)   
@@ -111,4 +117,6 @@ public class AppRestController {
 		}
 		return respJSON.toString();
 	}
+	
+	
 }

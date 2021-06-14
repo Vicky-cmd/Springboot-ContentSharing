@@ -5,12 +5,13 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 	<title>${param.title}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, height=device-height">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="icon" type="logo.jpg" href="/assets/images/logo.jpg">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://kit.fontawesome.com/3636773bbd.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/assets/css/index.css">
 	
@@ -30,9 +31,9 @@ pageEncoding="ISO-8859-1"%>
 				
 				<%
 					if(checkLogin){
-						out.print("<a href=\"/authenticate/logout\" class=\"linkbutton\">LOGOUT</a>");
+						out.print("<a href=\"/authenticate/logout\" class=\"linkbutton\" style=\"right: 0; position: absolute;\">LOGOUT</a>");
 					} else {
-						out.print("<a href=\"/authenticate\" class=\"linkbutton\">LOGIN</a>");				
+						out.print("<a href=\"/authenticate\" class=\"linkbutton\" style=\"right: 0; position: absolute;\">LOGIN</a>");				
 					}
 				%>
 				
@@ -57,7 +58,7 @@ pageEncoding="ISO-8859-1"%>
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Articles</a>
                     <div class="dropdown-menu">
                         <a href="/membersdashboard/createNewArticle" class="dropdown-item">Create Article</a>
-                        <a href="#" class="dropdown-item">View Articles</a>
+                        <a href="/about-me" class="dropdown-item">Creator's Info</a>
                     </div>
                 </div>
                 <c:if test="<%= request.getSession().getAttribute(\"isAdmin\")!=null && request.getSession().getAttribute(\"isAdmin\").toString().equalsIgnoreCase(\"Y\") %>">
@@ -70,6 +71,10 @@ pageEncoding="ISO-8859-1"%>
 	                    </div>
 	                </div>
                 </c:if>
+	            <a href="/retailApp" style="whiteSpace: nowrap" class="nav-item nav-link">
+	                <i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;
+	                Shopping App
+	            </a>    
             </div>
             <c:url var="searchUrl" value="/search">
             	<c:param name="pgNo">1</c:param>
