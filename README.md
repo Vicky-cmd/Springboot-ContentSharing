@@ -2,7 +2,8 @@
 This is a Content Sharing platform created by using springboot backend and jsp and reactjs implementation for the UI.
 The application is corrently hosted in [heroku](https://infotrends-media.herokuapp.com)
 
-The build for the react apps have been integrated with the main springboot application, but their code is saved inside [React Apps](https://github.com/Vicky-cmd/Springboot-ContentSharing/tree/main/React%20Apps) folder 
+The build for the react apps have been integrated with the main springboot application, but their code is saved inside [React Apps](https://github.com/Vicky-cmd/Springboot-ContentSharing/tree/main/React%20Apps) folder.
+ 
 The springboot microservices for the Shopping app are stored in [Springboot Microservices](https://github.com/Vicky-cmd/Springboot-ContentSharing/tree/main/Springboot%20Microservices) in the repo.
 
 This comprises of three different functional applications:
@@ -13,7 +14,7 @@ This comprises of three different functional applications:
 	3. A Rich Text editor for creating and sharing articles with support for directly uploading the image and displaying videos from Youtube and Facebook.
 	3. A rich text editor for adding comments to the article and dynamically adding the it to the UI.
 	4. Use of Filters implemented in the Springboot backend to restrict access to certain url paths without user login and some based on access to the user (admin access). When a user tries access a certain restricted page without loging in to the application, then they are redirected to the Login page and then they are redirected to it after login (if it is not restricted with admin access).
-	5. [MessagingServices]() is a part of this application and is used for mailing the link to the registered email id for reseting the password (It is secured by using a temporary auth token that is sent within the email link). It is also used to verify the email id and create a new password when a new user is crated by using the admin account.This is connected to the main application using Rabbitmq server/Queue.
+	5. [MessagingServices](https://github.com/Vicky-cmd/Springboot-ContentSharing/tree/main/MessagingServices) is a part of this application and is used for mailing the link to the registered email id for reseting the password (It is secured by using a temporary auth token that is sent within the email link). It is also used to verify the email id and create a new password when a new user is crated by using the admin account.This is connected to the main application using Rabbitmq server/Queue.
 	6. Passwords are secured by using the Bcrypt encoder.
 		
 2. [Shopping Application](https://github.com/Vicky-cmd/Springboot-ContentSharing/tree/main/React%20Apps/ShoppingApp) created with a react frontend and Springboot applications for backend. Integrated use the user management features of the Content sharing application by fetching user data by using a seperate api. 
