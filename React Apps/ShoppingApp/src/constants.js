@@ -1,0 +1,9 @@
+export const USER_INFO = 'USER_INFO';
+export const ITEM_DATA = 'ITEM_DATA';
+export const ADD_CART_QTY = 'ADD_CART_QTY';
+export const UPDATE_CART_DATA = 'UPDATE_CART_DATA';
+export const DELETE_CART_DATA = 'DELETE_CART_DATA';
+export const ADD_ADDRESS_INFO = 'ADD_ADDRESS_INFO';
+export const ADD_NEW_ADDRESS = 'ADD_NEW_ADDRESS';
+export const DELETE_ADDRESS = 'DELETE_ADDRESS';
+export const UPDATE_ADDRESS = 'UPDATE_ADDRESS';

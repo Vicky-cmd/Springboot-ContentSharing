@@ -1,0 +1,117 @@
+body {
+    text-align: center;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-image: url("./images/background-image.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	color: white;
+}
+
+.btn {
+    color: white;
+}
+
+.btn:hover {
+    color: aliceblue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bolder;
+}
+
+.profilePic {
+    height: 150px;
+    width: 150px;
+     border-radius: 75px;
+}
+
+.title-toggle-fade-in {
+    opacity: 100;
+    animation-name: fade-in;
+    animation-duration: 2s;
+}
+
+.title-toggle-fade-out {
+    opacity: 0;
+    animation-name: fade-out;
+    animation-duration: 2s;
+}
+
+@keyframes fade-out {
+    from {opacity: 100;}
+    to {opacity: 0;}
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 100;}
+}
+
+.artistPic {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+}
+
+.trackItem {
+    width: fit-content;
+    display: inline;
+}
+
+.tracksCss {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+}
+
+.scrollbar {
+    font-size: xx-large;
+    font-weight: bolder;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.albumImage {
+    width: 300px;
+    height: 300px;
+    margin: 'auto';
+}
+
+.App {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  
+  .title {
+    margin: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bolder;
+    font-size: xx-large;
+    font-variant-caps: titling-caps;
+  }
+  
+  .list-item {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+  }
+  
+  .list-group {
+    padding: 10px;
+  }
+  
+  .delete-button {
+    float: right;
+    cursor: pointer;
+    vertical-align: middle;
+  }
